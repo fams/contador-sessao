@@ -14,10 +14,10 @@ ENV REDIS_HOST redis
 ENV REDIR_PORT 6379
 
 COPY --from=build /app/venv /app/venv
-COPY /contador /app/
-ADD /runapp.sh /app/
 RUN apt-get update -y && \
  apt-get --no-install-recommends -y install python3 libexpat1
+COPY /contador /app/
+ADD /runapp.sh /app/
 ENTRYPOINT ["/app/runapp.sh"]
 WORKDIR /app/
 CMD ["app.py"]
