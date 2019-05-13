@@ -6,7 +6,7 @@ from flask_session import Session
 
 
 app = Flask(__name__, template_folder="templates")
-
+versao = 0.1
 
 REDIS_HOST = os.environ.get("REDIS_HOST", default='localhost')
 REDIS_PORT = os.environ.get("REDIS_PORT", default=6379)
@@ -25,7 +25,7 @@ def index():
     else:
         session['contador'] = int(session['contador']) + 1
     contador = session['contador']
-    return render_template('index.html',acessos=contador)
+    return render_template('index.html',acessos=contador , versao=versao )
 
 
 if __name__ == "__main__":
