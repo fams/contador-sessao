@@ -6,7 +6,7 @@ from flask_session import Session
 
 
 app = Flask(__name__, template_folder="templates")
-versao = 0.1
+versao = 0.2
 
 REDIS_HOST = os.environ.get("REDIS_HOST", default='localhost')
 REDIS_PORT = os.environ.get("REDIS_PORT", default=6379)
